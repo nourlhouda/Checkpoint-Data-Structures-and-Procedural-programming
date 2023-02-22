@@ -1,0 +1,20 @@
+VAR
+    set1, set2: ARRAY[] OF INTEGER
+    sum, element: INTEGER
+BEGIN
+    sum := 0;
+    
+    FOR element IN set1 DO
+        IF NOT element IN set2 THEN
+            sum := sum + element;
+        END_IF
+    END_FOR
+    
+    FOR element IN set2 DO
+        IF NOT element IN set1 THEN
+            sum := sum + element;
+        END_IF
+    END_FOR
+    
+    RETURN sum;
+END
